@@ -2,6 +2,8 @@ let player,computer
 let playerScore=document.querySelector('playerScore')
 let computerScore=document.querySelector('computerScore')
 let images =document.querySelectorAll('img')
+let index=0
+let index1=0
 const playRPS = choice =>{
     const choices =['rock','paper','scissors']
 
@@ -10,22 +12,27 @@ const playRPS = choice =>{
          computer = choices[Math.floor(Math.random() * 3)];
 
         if (player==='rock' && computer === 'paper'){ 
-             
+            index++
             return `player : ${choice} ::: Computer : ${computer} => computer WINS!`
 
         }else if (player === 'rock'&& computer === 'scissors'){
+            index1++
             return `player : ${choice} ::: Computer : ${computer} => you WIN!`
 
         }else if(player=== 'scissors'&& computer=== 'paper'){
+            index1++
             return `player : ${choice} ::: Computer : ${computer} => you WIN!`
 
         }else if(player==='scissors'&& computer==='rock'){
+            index++
             return `player : ${choice} ::: Computer : ${computer} => computer WINS!`
-
+    
         }else if(player==='paper'&& computer==='rock'){
+            index++
             return `player : ${choice} ::: Computer : ${computer} => computer WINS!`
 
         }else if(player==='paper'&& computer==='scissors'){
+            index++
             return `player : ${choice} ::: Computer : ${computer} => computer WINS! `
 
         }else{
@@ -59,13 +66,9 @@ buttons.forEach(button =>{
   separator.appendChild(table)
   separator.appendChild(h4)
  function count(){
-    let index=0
-  let index1=0
   if ( h4.textContent=== 'computer WINS!'){ 
-    index++
    alert( `computer=${index}`)
   }else if (h4.textContent=== 'you WIN!'){
-    index1++
    alert(`player=${index1}`)
   }
   }
